@@ -47,7 +47,6 @@ PyJWT==1.7.1
 pymacaroons==0.13.0
 PyNaCl==1.4.0
 pyRFC3339==1.1
-python-apt===2.2.0-ubuntu0.21.04.1
 python-dateutil==2.8.1
 python-debian==0.1.39
 pytz==2021.1
