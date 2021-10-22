@@ -16,7 +16,7 @@ infile.close()
 
 c = make_pipeline(vectorizer, model)
 
-class_names = {0: 'non-disaster', 1:'disaster'}
+class_names = {'non-emergency': 'non-disaster', 'emergency':'disaster'}
 LIME_explainer = LimeTextExplainer(class_names=class_names)
 
 
