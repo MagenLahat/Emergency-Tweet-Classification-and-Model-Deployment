@@ -3,6 +3,13 @@ import pickle
 from sklearn.pipeline import make_pipeline
 from lime.lime_text import LimeTextExplainer
 import os
+import spacy
+nlp = spacy.load('en_core_web_sm')
+from nltk.corpus import stopwords
+import nltk
+nltk.download('stopwords')
+import re
+import string
 
 app = Flask(__name__, template_folder='template')
 
