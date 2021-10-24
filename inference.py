@@ -28,9 +28,29 @@ def my_index():
 
 @app.route('/', methods=['POST'])
 def predict_tweet():
+    
+    def clean_text(text):
+        '''Make text lowercase, remove text in square brackets,remove links,remove punctuation
+        and remove words containing numbers.'''
+        stop_words = stopwords.words('english') + ['u', 'ur', '4', '2', 'im', 'dont', 'doin', 'ure']
+        text = text.lower()
+        text = re.sub('\[.*?\]', '', text)
+        text = re.sub('https?://\S+|www\.\S+', '', text)
+        text = re.sub('<.*?>+', '', text)
+        text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
+        text = re.sub('\n', '', text)
+        text = re.sub('\w*\d\w*', '', text)
+        text = ''.join([c for c in text if c not in string.punctuation])
+        tokens = re.split('\W+', text)
+        text = ' '.join([word for word in tokens if word not in stop_words])
+        text = nlp(text)
+        text = ' '.join([word.lemma_ for word in text])
+        return text
+    
     exp = None
     input_text = request.form['input_text']
-    text = list([input_text])
+    clean_output = clean_text(input_text)
+    text = list([clean_output])
     LIME_exp = LIME_explainer.explain_instance(text[0], c.predict_proba)
     exp = LIME_exp.as_html()
 
