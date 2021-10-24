@@ -21,7 +21,6 @@ nltk==3.6.5
 numpy==1.21.3
 packaging==21.0
 pathy==0.6.0
-pkg_resources==0.0.0
 preshed==3.0.6
 pydantic==1.8.2
 pyparsing==2.4.7
