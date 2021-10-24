@@ -6,11 +6,11 @@ import os
 
 app = Flask(__name__, template_folder='template')
 
-infile = open('lr_clf.pkl', 'rb')
+infile = open('logistic_model.pkl', 'rb')
 model = pickle.load(infile)
 infile.close()
 
-infile = open('vectorizer.pkl', 'rb')
+infile = open('tf.pkl', 'rb')
 vectorizer = pickle.load(infile)
 infile.close()
 
