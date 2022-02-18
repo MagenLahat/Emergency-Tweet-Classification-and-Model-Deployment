@@ -1,6 +1,6 @@
 # Emergency Tweet Classification and Model Deployment
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/MagenLahat/Emergency-Tweet-Classification-and-Model-Deployment/blob/main/tweets.png)
 medium posted article:
 
 
